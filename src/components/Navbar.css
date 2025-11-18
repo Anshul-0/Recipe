@@ -1,0 +1,60 @@
+/* NAVBAR MAIN */
+.navbar {
+  width: 100%;
+  background: linear-gradient(90deg, #5c2a1e, #8e4b2f);
+  padding: 15px 0;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* WRAPPER */
+.nav-container {
+  width: 92%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  font-size: 34px;
+  font-weight: 900;
+  color: #fff5e9;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-family: "Georgia", serif;
+}
+
+/* NAV LINKS */
+.nav-links a {
+  color: #ffe8d6;
+  margin-left: 35px;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+/* UNDERLINE ANIMATION */
+.nav-links a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #ffd9b3;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}

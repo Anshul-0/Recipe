@@ -1,0 +1,46 @@
+.detail-container {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+  background: #fdf7ef;
+  min-height: 100vh;
+}
+
+.detail-img {
+  width: 45%;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
+
+.detail-content {
+  width: 50%;
+  color: #3a1f0b;  /* dark visible color */
+}
+
+.detail-content h1 {
+  font-size: 38px;
+  color: #5b2c0c;
+  font-weight: 800;
+}
+
+.detail-meta {
+  margin-top: 5px;
+  margin-bottom: 25px;
+  color: #8b5e34;
+  font-size: 17px;
+}
+
+h3 {
+  color: #5b2c0c;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+ul, ol {
+  margin-left: 20px;
+  line-height: 1.8;
+  color: #3a1f0b;  /* visible text */
+  font-size: 16px;
+}

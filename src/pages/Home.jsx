@@ -1,34 +1,39 @@
 import apiData from "../api/api.json";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
-export const Home = () => {
-    return (
-        <div className="container">
-            {apiData.map((currEle, idx) => (
-                <div className="cart-card" key={idx}>
-                    <h2 className="cart-title">Cart ID: {currEle.id}</h2>
+export default function Home() {
+  return (
+    <div className="container">
+      <h1 className="page-title">Discover Delicious Recipes</h1>
 
-                    <div className="products-grid">
-                        {currEle.products.map((product, index) => (
-                            <div className="product-card" key={index}>
-                                <img
-                                    src={product.thumbnail}
-                                    alt={product.title}
-                                    className="product-img"
-                                />
+      <div className="grid-container">
+        {apiData.map((recipe) => (
+          <div className="card" key={recipe.id}>
+            <img src={recipe.image} className="card-img" alt={recipe.name} />
 
-                                <h3 className="product-title">{product.title}</h3>
-                                <p className="product-price">${product.price}</p>
+            <div className="card-body">
+              <h2 className="card-title">{recipe.name}</h2>
 
-                                <div className="button-group">
-                                    <button className="btn view-btn">View</button>
-                                    <button className="btn cart-btn">Add to Cart</button>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            ))}
-        </div>
-    );
-};
+              <p className="desc">
+                {Array.isArray(recipe.instructions)
+                  ? recipe.instructions[0].slice(0, 70) + "..."
+                  : "No description"}
+              </p>
+
+              <p className="card-meta">
+                <span>{recipe.cuisine}</span> • 
+                <span>{recipe.difficulty}</span> • 
+                <span>⭐ {recipe.rating}</span>
+              </p>
+
+              <Link to={`/recipe/${recipe.id}`} className="read-more">
+                Read more →
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
